@@ -11,6 +11,9 @@ import SwiftyJSON
 import Alamofire
 
 class ViewController: UIViewController {
+    
+    var nameArray = [String]()
+    var ageArray = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,14 +21,31 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    
     func parseLocalJSON(){
         
         let path : String = NSBundle.mainBundle().pathForResource("sampleJSON", ofType: "json") as String!
         let jsonData = NSData(contentsOfFile: path) as NSData!
         let readableJSON = JSON(data: jsonData, options: NSJSONReadingOptions.MutableContainers, error: nil)
     
-        var users = readableJSON["Users"]
+        let users = readableJSON["Users"]
+        let userCount = (users.count) - 1
+        
+        
+        for i in 0...userCount {
+            var id = ""
+            id += "\(i)"
+            let name = readableJSON["Users"][id]["Name"].string!
+            print(name)
+            nameArray.append(name)
+            let age = readableJSON["Users"][id]["Age"].string!
+            print(age)
+            ageArray.append(age)
+        }
+        
+        print(nameArray)
+        print(ageArray)
+        
+        
         NSLog("\(users)")
 
     }
