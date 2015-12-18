@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		03B2152C2D0EECF2CD331705 /* Pods_apiFactory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57EF01C649D7AE0B56852F0E /* Pods_apiFactory.framework */; };
+		36A73F117604EF52C03FF389 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3EA6338CC2518896E452198 /* Pods.framework */; };
 		707D49CC1C248AA000C20E66 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 707D49CB1C248AA000C20E66 /* Podfile */; };
 		707D49CE1C248B6300C20E66 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 707D49CD1C248B6300C20E66 /* SwiftyJSON.framework */; };
 		70B7B0831C24830900EBF451 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B7B0821C24830900EBF451 /* AppDelegate.swift */; };
@@ -40,7 +41,7 @@
 		49B81CA4AB601DA924F2897B /* Pods-apiFactory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apiFactory.release.xcconfig"; path = "Pods/Target Support Files/Pods-apiFactory/Pods-apiFactory.release.xcconfig"; sourceTree = "<group>"; };
 		4EE2A83B925FE74C1F6C32E8 /* Pods-apiFactory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apiFactory.debug.xcconfig"; path = "Pods/Target Support Files/Pods-apiFactory/Pods-apiFactory.debug.xcconfig"; sourceTree = "<group>"; };
 		57EF01C649D7AE0B56852F0E /* Pods_apiFactory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_apiFactory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		707D49CB1C248AA000C20E66 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; };
+		707D49CB1C248AA000C20E66 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		707D49CD1C248B6300C20E66 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Pods/../build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		70B7B07F1C24830900EBF451 /* apiFactory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = apiFactory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70B7B0821C24830900EBF451 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +56,7 @@
 		70B7B09E1C24830A00EBF451 /* apiFactoryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = apiFactoryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		70B7B0A21C24830A00EBF451 /* apiFactoryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apiFactoryUITests.swift; sourceTree = "<group>"; };
 		70B7B0A41C24830A00EBF451 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3EA6338CC2518896E452198 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 			files = (
 				707D49CE1C248B6300C20E66 /* SwiftyJSON.framework in Frameworks */,
 				03B2152C2D0EECF2CD331705 /* Pods_apiFactory.framework in Frameworks */,
+				36A73F117604EF52C03FF389 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +92,7 @@
 			children = (
 				707D49CD1C248B6300C20E66 /* SwiftyJSON.framework */,
 				57EF01C649D7AE0B56852F0E /* Pods_apiFactory.framework */,
+				E3EA6338CC2518896E452198 /* Pods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -299,7 +303,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-apiFactory/Pods-apiFactory-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A92EE6CCC8F87C0AC683F148 /* Check Pods Manifest.lock */ = {
