@@ -12,6 +12,8 @@ import Alamofire
 
 class ViewController:UITableViewController {
     
+    
+    let apiUrl = "http://pinchapp01d.pinchfavor.com:8080/"
     var nameArray = [String]()
     var ageArray = [String]()
     var numRows = 0
@@ -19,6 +21,18 @@ class ViewController:UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         parseLocalJSON()
+        getJobById()
+    }
+    
+    
+    func getJobById(){
+        Alamofire.request(.GET, "http://pinchapp01d.pinchfavor.com:8080/v1/job/4758")
+            .response { request, response, data, error in
+                print(request)
+                print(response)
+                print(data)
+                print(error)
+        }
     }
     
     func parseLocalJSON(){
