@@ -19,46 +19,43 @@ class ViewController:UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         parseLocalJSON()
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     func parseLocalJSON(){
-        
         let path : String = NSBundle.mainBundle().pathForResource("sampleJSON", ofType: "json") as String!
         let jsonData = NSData(contentsOfFile: path) as NSData!
         let readableJSON = JSON(data: jsonData, options: NSJSONReadingOptions.MutableContainers, error: nil)
-    
+
         let users = readableJSON["Users"]
-        let userCount = (users.count) - 1
-        numRows = users.count
+        numRows = users.count // for UITableView
         
-        for i in 0...userCount {
+        //(JS..feels)
+        for var i = 0; i < users.count; i++ {
+            // ok back to swift :)
             var id = ""
             id += "\(i)"
-            let name = readableJSON["Users"][id]["Name"].string!
-            print(name)
+            let name = users[id]["Name"].string!
+            let age = users[id]["Age"].string!
             nameArray.append(name)
-            let age = readableJSON["Users"][id]["Age"].string!
-            print(age)
             ageArray.append(age)
         }
         
         print(nameArray)
         print(ageArray)
-        
-        
         NSLog("\(users)")
-
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //define number of rows per logic
         return numRows
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
+        //assign cell to identifier in storyboard
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) 
         
+        //print out the list --- this is wow.
         if nameArray.count != 0 {
             cell.textLabel?.text = nameArray[indexPath.row] + " " + ageArray[indexPath.row]
         }
