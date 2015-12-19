@@ -10,10 +10,11 @@ import UIKit
 import SwiftyJSON
 import Alamofire
 
-class ViewController: UIViewController {
+class ViewController:UITableViewController {
     
     var nameArray = [String]()
     var ageArray = [String]()
+    var numRows = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,7 @@ class ViewController: UIViewController {
     
         let users = readableJSON["Users"]
         let userCount = (users.count) - 1
-        
+        numRows = users.count
         
         for i in 0...userCount {
             var id = ""
@@ -48,6 +49,21 @@ class ViewController: UIViewController {
         
         NSLog("\(users)")
 
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return numRows
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) 
+        
+        if nameArray.count != 0 {
+            cell.textLabel?.text = nameArray[indexPath.row] + " " + ageArray[indexPath.row]
+        }
+        
+        return cell
     }
 
     override func didReceiveMemoryWarning() {
