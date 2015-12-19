@@ -10,9 +10,10 @@ import UIKit
 import SwiftyJSON
 import Alamofire
 
-class ViewController:UITableViewController {
+class ListController:UITableViewController {
     
     
+    var apiUrl = "http://pinchapp01d.pinchfavor.com:8080/v1/job/4758"
     var nameArray = [String]()
     var ageArray = [String]()
     var numRows = 0
@@ -29,7 +30,8 @@ class ViewController:UITableViewController {
             case .Success:
                 if let value = response.result.value {
                     let json = JSON(value)
-                    let name = json["createUserFirstName"]
+                    let name = json["createUserFirstName"].string!
+                    
                     print(name)
 //
                 }

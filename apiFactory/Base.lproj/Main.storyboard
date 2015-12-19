@@ -1,14 +1,53 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xHo-R5-oOf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JG7-c5-FtU">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home Controller-->
+        <scene sceneID="5rv-uB-q0J">
+            <objects>
+                <viewController id="JG7-c5-FtU" customClass="HomeController" customModule="apiFactory" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6j8-PS-xbT"/>
+                        <viewControllerLayoutGuide type="bottom" id="PhX-hx-sCO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Xek-yB-7Ti">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KPf-ME-w50">
+                                <rect key="frame" x="277" y="20" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X2c-GK-bfl">
+                                <rect key="frame" x="180" y="236" width="240" height="128"/>
+                                <animations/>
+                            </imageView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="X2c-GK-bfl" firstAttribute="centerY" secondItem="Xek-yB-7Ti" secondAttribute="centerY" id="51d-kb-sn1"/>
+                            <constraint firstItem="X2c-GK-bfl" firstAttribute="centerX" secondItem="Xek-yB-7Ti" secondAttribute="centerX" id="HXU-J5-Uj8"/>
+                            <constraint firstItem="KPf-ME-w50" firstAttribute="top" secondItem="6j8-PS-xbT" secondAttribute="bottom" id="bzE-gb-br5"/>
+                            <constraint firstItem="KPf-ME-w50" firstAttribute="centerX" secondItem="Xek-yB-7Ti" secondAttribute="centerX" id="rxt-gV-Tir"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="profile" destination="X2c-GK-bfl" id="bTK-sA-yj9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cvR-ki-W1J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="113" y="-667"/>
+        </scene>
+        <!--List Controller-->
         <scene sceneID="K6f-fd-71x">
             <objects>
-                <tableViewController id="xHo-R5-oOf" customClass="ViewController" customModule="apiFactory" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="xHo-R5-oOf" customClass="ListController" customModule="apiFactory" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="iFc-JM-wf1">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,7 +73,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a1b-yY-Rsa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="116" y="-171"/>
+            <point key="canvasLocation" x="640" y="-652"/>
         </scene>
     </scenes>
 </document>
