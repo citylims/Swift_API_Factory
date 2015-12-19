@@ -13,7 +13,6 @@ import Alamofire
 class ViewController:UITableViewController {
     
     
-    
     var nameArray = [String]()
     var ageArray = [String]()
     var numRows = 0
@@ -30,7 +29,9 @@ class ViewController:UITableViewController {
             case .Success:
                 if let value = response.result.value {
                     let json = JSON(value)
-                    print("JSON: \(json)")
+                    let name = json["createUserFirstName"]
+                    print(name)
+//
                 }
             case .Failure(let error):
                 print(error)
