@@ -11,7 +11,8 @@ import SwiftyJSON
 import Alamofire
 
 class HomeController:UIViewController {
-       
+    
+    
     
     @IBOutlet weak var profile: UIImageView!
     
@@ -27,7 +28,11 @@ class HomeController:UIViewController {
     }
     
     func foo(){
-        Alamofire.request(.GET, apiUrl).validate().responseJSON { response in
+        var requestUrl: String = ApiInfo.apiUrl
+        let query: String = "/v1/user/872"
+        requestUrl += query
+        print(requestUrl)
+        Alamofire.request(.GET, requestUrl).validate().responseJSON { response in
             switch response.result {
             case .Success:
                 if let value = response.result.value {
