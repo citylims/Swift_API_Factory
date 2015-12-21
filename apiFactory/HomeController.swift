@@ -18,7 +18,7 @@ class HomeController:UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        foo()
+        getUser("872")
         
     }
     
@@ -27,10 +27,11 @@ class HomeController:UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func foo(){
+    func getUser(id: String){
         var requestUrl: String = ApiInfo.apiUrl
-        let query: String = "/v1/user/872"
+        let query: String = "/v1/user/"
         requestUrl += query
+        requestUrl += id
         print(requestUrl)
         Alamofire.request(.GET, requestUrl).validate().responseJSON { response in
             switch response.result {
@@ -40,7 +41,6 @@ class HomeController:UIViewController {
                     let picUrl = json["url"].string!
                     print(picUrl)
                     self.profile.imageFromUrl(picUrl)
-                    
                     //
                 }
             case .Failure(let error):
