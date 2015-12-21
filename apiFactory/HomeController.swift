@@ -48,8 +48,6 @@ class HomeController:UIViewController {
 //                    print(rate!)
 //                    print(picUrl)
                     self.profile.imageFromUrl(picUrl)
-//                    let fooUser = User(firstName: firstNameU!)
-//                    print(fooUser)
                     self.defineUser(json)
                 }
             case .Failure(let error):
@@ -59,7 +57,7 @@ class HomeController:UIViewController {
     }
     
     
-    func defineUser(data: JSON) -> User {
+    func defineUser(data: JSON) {
         print(data)
         let userName = data["userName"].string!
         let splitArr = userName.componentsSeparatedByString(" ")
@@ -69,8 +67,14 @@ class HomeController:UIViewController {
         let picture = data["url"].string!
         let fooUser = User(firstName: fName, lastName: lName, email: email, picture: picture)
         print(fooUser)
-        return fooUser
+        scopeUser(fooUser)
+    
         
+    }
+    
+    func scopeUser(currentUser: User) {
+        print(currentUser.firstName)
+    
     }
 
     
