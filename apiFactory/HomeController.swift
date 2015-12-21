@@ -61,19 +61,17 @@ class HomeController:UIViewController {
         print(data)
         let userName = data["userName"].string!
         let splitArr = userName.componentsSeparatedByString(" ")
-        let fName = splitArr[0]
-        let lName = splitArr[1]
-        let email = data["email"].string!
+        let firstName = splitArr[0]
+        let lastName = splitArr[1]
         let picture = data["url"].string!
-        let fooUser = User(firstName: fName, lastName: lName, email: email, picture: picture)
-        print(fooUser)
-        scopeUser(fooUser)
-    
-        
+        let email = data["email"].string!
+        let phoneNumber = data["phoneNumber"].string!
+        let rating = data["rating"].int!
+        let fooUser: User? = User(firstName: firstName, lastName: lastName, picture: picture, email: email, phoneNumber: phoneNumber, rating: rating)
+        self.scopeUser(fooUser!)
     }
     
     func scopeUser(currentUser: User) {
-        print(currentUser.firstName)
     
     }
 

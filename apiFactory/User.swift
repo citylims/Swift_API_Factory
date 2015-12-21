@@ -11,6 +11,8 @@ import Foundation
 struct User {
     let firstName: String
     let lastName: String
-    let email: String
     let picture: String
+    let email: String
+    let phoneNumber: String
+    let rating: Int
 }
