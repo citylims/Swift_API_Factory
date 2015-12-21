@@ -38,15 +38,39 @@ class HomeController:UIViewController {
             case .Success:
                 if let value = response.result.value {
                     let json = JSON(value)
+                    print(json)
                     let picUrl = json["url"].string!
-                    print(picUrl)
+//                    let rate :Int? = json["rating"].int
+//                    let userName = json["userName"].string!
+//                    let userNameArr = userName.componentsSeparatedByString(" ")
+//                    let firstNameU: String? = userNameArr[0]
+//                    let lastName: String? = userNameArr[1]
+//                    print(rate!)
+//                    print(picUrl)
                     self.profile.imageFromUrl(picUrl)
-                    //
+//                    let fooUser = User(firstName: firstNameU!)
+//                    print(fooUser)
+                    self.defineUser(json)
                 }
             case .Failure(let error):
                 print(error)
             }
         }
+    }
+    
+    
+    func defineUser(data: JSON) -> User {
+        print(data)
+        let userName = data["userName"].string!
+        let splitArr = userName.componentsSeparatedByString(" ")
+        let fName = splitArr[0]
+        let lName = splitArr[1]
+        let email = data["email"].string!
+        let picture = data["url"].string!
+        let fooUser = User(firstName: fName, lastName: lName, email: email, picture: picture)
+        print(fooUser)
+        return fooUser
+        
     }
 
     

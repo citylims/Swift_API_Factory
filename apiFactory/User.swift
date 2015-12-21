@@ -11,13 +11,6 @@ import Foundation
 struct User {
     let firstName: String
     let lastName: String
-    let phoneNumber: Int
-    let picture: String
     let email: String
-    let rating: Int
-    
-    
-    func currentUser() -> User {
-        return User(firstName: firstName, lastName: lastName, phoneNumber: phoneNumber, picture: picture, email: email, rating: rating)
-    }
+    let picture: String
 }
