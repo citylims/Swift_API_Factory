@@ -72,7 +72,8 @@ class HomeController:UIViewController {
     }
     
     func scopeUser(currentUser: User) {
-    
+        print("XXXXXXXXXXX")
+        
     }
 
     

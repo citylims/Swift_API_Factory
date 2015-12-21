@@ -6,4 +6,12 @@
 //  Copyright © 2015 citylims. All rights reserved.
 //
 
-import Foundation
+
+import UIKit
+import SwiftyJSON
+import Alamofire
+
+class ActivityController:UIViewController {
+
+
+}
