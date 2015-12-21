@@ -15,4 +15,8 @@ struct User {
     let email: String
     let phoneNumber: String
     let rating: Int
+    
+    func build() -> User {
+        return User(firstName: firstName, lastName: lastName, picture: picture, email: email, phoneNumber: phoneNumber, rating: rating)
+    }
 }
